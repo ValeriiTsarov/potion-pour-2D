@@ -1,0 +1,89 @@
+{
+  "liquid": {
+    "sloshStiffness": 46,
+    "sloshDamping": 3.4,
+    "sloshResponse": 1,
+    "rippleSize": 0.1,
+    "rippleDecay": 5.6,
+    "waveSpeed": 3.5,
+    "layerSoftness": 1.4,
+    "surfaceTone": 0.2,
+    "absorption": 0.4,
+    "gloss": 0.78,
+    "bubbles": 1,
+    "perspective": 0.12
+  },
+  "pour": {
+    "speed": 1.65,
+    "lift": 23,
+    "moveTime": 0.55,
+    "streamWidth": 6.1,
+    "streamSpeed": 122,
+    "gravity": 1500
+  },
+  "drops": {
+    "dribble": 3,
+    "size": 1.75,
+    "stickiness": 0.55,
+    "slideSpeed": 28,
+    "floorLife": 2,
+    "residue": 0.85,
+    "residueTime": 6
+  },
+  "splash": {
+    "amount": 0.55,
+    "speed": 0.9,
+    "size": 0.65,
+    "bounce": 0.17,
+    "spread": 0.35
+  },
+  "fluid": {
+    "threshold": 0.52,
+    "edge": 0.255,
+    "gloss": 0.55,
+    "shading": 1.11
+  },
+  "glass": {
+    "glare": 0.63,
+    "glareWidth": 0.185,
+    "glareSharp": 2.95,
+    "secondary": 0.16,
+    "rim": 1.12,
+    "lip": 0.92,
+    "tint": 0.035,
+    "shimmer": 0.31,
+    "lightX": -0.86,
+    "followCursor": false,
+    "tiltResponse": 0.37
+  },
+  "shadow": {
+    "opacity": 0,
+    "softness": 0.3,
+    "length": 0,
+    "stretch": 0.5,
+    "caustic": 0,
+    "liftFade": 0
+  },
+  "background": {
+    "distortion": 0.31,
+    "speed": 0.12,
+    "caustics": 0.43,
+    "vignette": 0.38,
+    "color1": "#3c1a70",
+    "color2": "#0e102f"
+  },
+  "game": {
+    "colors": 5,
+    "empty": 2
+  },
+  "palette": [
+    "#ff5d73",
+    "#ffb52e",
+    "#19d3a2",
+    "#3a86ff",
+    "#a06cff",
+    "#f2459b",
+    "#b5e53b",
+    "#ff7b3a"
+  ]
+}

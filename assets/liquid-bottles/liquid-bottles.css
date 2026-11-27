@@ -1,0 +1,59 @@
+/* Liquid Bottles settings panel + toast. Everything is scoped to .lb-ui so it does not touch the host page. */
+.lb-ui {
+  --lb-panel: rgba(24, 14, 52, 0.86);
+  --lb-line: rgba(190, 160, 255, 0.16);
+  --lb-text: #ece6ff;
+  --lb-muted: #a99cd0;
+  --lb-accent: #b98bff;
+  color: var(--lb-text); font: 13px/1.4 "Segoe UI", system-ui, -apple-system, sans-serif; box-sizing: border-box;
+}
+.lb-ui *, .lb-ui *::before, .lb-ui *::after { box-sizing: border-box; }
+
+.lb-ui button { font: inherit; color: var(--lb-text); background: rgba(185, 139, 255, 0.16); border: 1px solid rgba(185, 139, 255, 0.35);
+  border-radius: 8px; padding: 6px 12px; cursor: pointer; transition: background .15s; }
+.lb-ui button:hover { background: rgba(185, 139, 255, 0.3); }
+.lb-ui button.primary { background: linear-gradient(90deg, #8f5cff, #d6559f); border-color: transparent; }
+.lb-ui button.danger { background: rgba(255, 90, 110, 0.15); border-color: rgba(255, 90, 110, 0.4); }
+
+#lb-panel { position: fixed; top: 0; right: 0; bottom: 0; width: 360px; max-width: 100vw; background: var(--lb-panel);
+  border-left: 1px solid var(--lb-line); backdrop-filter: blur(14px); display: flex; flex-direction: column;
+  transition: transform .25s ease; z-index: 1000; }
+#lb-panel.hidden { transform: translateX(105%); }
+#lb-panel header { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px;
+  border-bottom: 1px solid var(--lb-line); }
+#lb-panel h2 { margin: 0; font-size: 15px; letter-spacing: .3px; }
+#lb-panel-close { padding: 0 10px; font-size: 20px; line-height: 28px; background: none !important; border: none !important; }
+#lb-panel-body { overflow-y: auto; padding: 6px 12px 40px; flex: 1; }
+#lb-panel-body::-webkit-scrollbar { width: 8px; }
+#lb-panel-body::-webkit-scrollbar-thumb { background: rgba(185, 139, 255, 0.25); border-radius: 4px; }
+
+.lb-ui details { border-bottom: 1px solid var(--lb-line); padding: 4px 0; }
+.lb-ui summary { cursor: pointer; padding: 8px 4px; font-weight: 600; color: var(--lb-text); list-style: none; user-select: none; }
+.lb-ui summary::-webkit-details-marker { display: none; }
+.lb-ui summary::before { content: "▸"; display: inline-block; width: 16px; color: var(--lb-accent); transition: transform .15s; }
+.lb-ui details[open] summary::before { transform: rotate(90deg); }
+
+.lb-ui .row { display: grid; grid-template-columns: 1fr 120px 46px; align-items: center; gap: 8px; padding: 3px 4px; }
+.lb-ui .row label { color: var(--lb-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lb-ui .row .val { text-align: right; font-variant-numeric: tabular-nums; color: var(--lb-text); font-size: 12px; }
+.lb-ui .row.check { grid-template-columns: 1fr auto; }
+.lb-ui input[type=range] { width: 100%; accent-color: var(--lb-accent); }
+.lb-ui input[type=checkbox] { accent-color: var(--lb-accent); width: 16px; height: 16px; }
+.lb-ui input[type=color] { width: 44px; height: 24px; border: 1px solid var(--lb-line); border-radius: 6px; padding: 0; background: none; cursor: pointer; }
+.lb-ui input[type=text], .lb-ui select { font: inherit; color: var(--lb-text); background: rgba(10, 5, 25, 0.6); border: 1px solid var(--lb-line);
+  border-radius: 7px; padding: 6px 8px; width: 100%; }
+.lb-ui select option { background: #1a1036; }
+
+.lb-ui .palette { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 12px; padding: 4px; }
+.lb-ui .swatch { display: flex; align-items: center; gap: 8px; color: var(--lb-muted); }
+.lb-ui .swatch input[type=text] { width: 100%; padding: 3px 6px; font-size: 12px; }
+
+.lb-ui .btns { display: flex; flex-wrap: wrap; gap: 6px; padding: 8px 4px; }
+.lb-ui .preset-row { display: flex; gap: 6px; padding: 4px; }
+.lb-ui .preset-row > * { flex: 1; }
+.lb-ui .preset-row button { flex: 0 0 auto; }
+.lb-ui .note { color: var(--lb-muted); font-size: 12px; padding: 4px; }
+
+#lb-toast { position: fixed; top: 16px; left: 50%; transform: translateX(-50%) translateY(-80px); padding: 8px 16px;
+  border-radius: 10px; background: rgba(30, 16, 64, 0.92); border: 1px solid var(--lb-line); transition: transform .25s; z-index: 1001; pointer-events: none; }
+#lb-toast.show { transform: translateX(-50%) translateY(0); }
